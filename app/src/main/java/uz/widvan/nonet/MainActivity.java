@@ -26,7 +26,6 @@ import android.widget.Button;
 
 
         webView = findViewById(R.id.web_view);
-
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
@@ -56,13 +55,20 @@ import android.widget.Button;
             btTryAgain.setOnClickListener(v -> recreate());
 
             dialog.show();
-        }else{
-
-            webView.loadUrl("https://www.youtube.com");
-
-
-
         }
+
+//
+//        else{
+//            webView.loadUrl("https://www.youtube.com");
+//        }
+
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                webView.loadUrl("https://www.youtube.com");
+            }
+        });
 
     }
 }
